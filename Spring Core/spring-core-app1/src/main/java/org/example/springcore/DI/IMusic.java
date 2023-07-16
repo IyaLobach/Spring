@@ -1,4 +1,4 @@
-package org.example.springcore.IoC;
+package org.example.springcore.DI;
 
 public interface IMusic {
   String getMusic();

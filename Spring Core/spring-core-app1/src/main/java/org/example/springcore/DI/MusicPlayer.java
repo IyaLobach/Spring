@@ -1,4 +1,4 @@
-package org.example.springcore.IoC;
+package org.example.springcore.DI;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

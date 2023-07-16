@@ -15,22 +15,22 @@
   </bean>
 
   <bean id="classicalMusicBean"
-    class="org.example.springcore.IoC.ClassicalMusic">
+    class="org.example.springcore.DI.ClassicalMusic">
   </bean>
 
   <bean id="rockMusicBean"
-    class="org.example.springcore.IoC.RockMusic">
+    class="org.example.springcore.DI.RockMusic">
   </bean>
 
 <!--  Dependency Injection in constructor -->
   <bean id="musicPlayer"
-    class="org.example.springcore.IoC.MusicPlayer">
+    class="org.example.springcore.DI.MusicPlayer">
     <constructor-arg ref="classicalMusicBean"/>
   </bean>
 
   <!--  Dependency Injection in setter -->
   <bean id="musicPlayerSetter"
-    class="org.example.springcore.IoC.MusicPlayer">
+    class="org.example.springcore.DI.MusicPlayer">
     <property name="music" ref="rockMusicBean"/>
     <property name="volume" value="3"/>
   </bean>
@@ -38,7 +38,7 @@
 
   <!--  Dependency Injection from file-->
   <bean id="musicPlayerFile"
-    class="org.example.springcore.IoC.MusicPlayer">
+    class="org.example.springcore.DI.MusicPlayer">
     <property name="music" ref="${musicPlayerFile.music}"/>
     <property name="volume" value="${musicPlayerFile.volume}"/>
   </bean>
