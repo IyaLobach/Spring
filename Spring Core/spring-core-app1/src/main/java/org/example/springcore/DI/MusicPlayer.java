@@ -55,6 +55,17 @@ public class MusicPlayer {
     musicPlayer4.playVolume();
     System.out.println();
 
+    // Scope singleton and scope prototype
+    MusicPlayer musicPlayer5 = context.getBean("musicPlayerScopePrototype", MusicPlayer.class);
+    MusicPlayer musicPlayer6 = context.getBean("musicPlayerScopePrototype", MusicPlayer.class);
+    System.out.println(musicPlayer5);
+    System.out.println(musicPlayer6);
+
+    MusicPlayer musicPlayer7 = context.getBean("musicPlayerScopePrototype", MusicPlayer.class);
+    MusicPlayer musicPlayer8 = context.getBean("musicPlayerScopePrototype", MusicPlayer.class);
+    System.out.println(musicPlayer7);
+    System.out.println(musicPlayer8);
+
     context.close();
   }
 }

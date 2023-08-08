@@ -10,7 +10,9 @@
   <context:property-placeholder location="classpath:application.properties"/>
 
   <bean id="testBean"
-    class="org.example.springcore.TestBean.TestBean">
+    class="org.example.springcore.TestBean.TestBean"
+    init-method="myInit"
+    destroy-method="myDestroy">
     <constructor-arg value="Iya"/>
   </bean>
 
@@ -36,11 +38,24 @@
   </bean>
 
 
-  <!--  Dependency Injection from file-->
+  <!-- Dependency Injection from file -->
   <bean id="musicPlayerFile"
     class="org.example.springcore.DI.MusicPlayer">
     <property name="music" ref="${musicPlayerFile.music}"/>
     <property name="volume" value="${musicPlayerFile.volume}"/>
+  </bean>
+
+  <!--  Scope prototype and singleton. DependencyInjection in constructor-->
+  <bean id="musicPlayerScopePrototype"
+    class="org.example.springcore.DI.MusicPlayer"
+    scope="prototype">
+    <constructor-arg ref="classicalMusicBean"/>
+  </bean>
+
+  <bean id="musicPlayerScopeSingleton"
+    class="org.example.springcore.DI.MusicPlayer"
+    scope="singleton">
+    <constructor-arg ref="rockMusicBean"/>
   </bean>
 
 
