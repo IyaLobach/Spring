@@ -8,6 +8,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
   <context:property-placeholder location="classpath:application.properties"/>
+  <context:component-scan base-package="org.example.springcore.Annotation"/>
 
   <bean id="testBean"
     class="org.example.springcore.TestBean.TestBean"
@@ -57,6 +58,5 @@
     scope="singleton">
     <constructor-arg ref="rockMusicBean"/>
   </bean>
-
 
 </beans>
