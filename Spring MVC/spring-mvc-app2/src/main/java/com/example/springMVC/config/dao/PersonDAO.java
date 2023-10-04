@@ -31,8 +31,17 @@ public class PersonDAO {
 
   public void save(Person person) {
     person.setId(++ID);
-    System.out.println(person.getName() + " " + person.getId());
     people.add(person);
+  }
+
+  public void update(int id, Person newPerson) {
+    Person cur = show(id);
+    cur.setName(newPerson.getName());
+    System.out.println(cur.getName() + " " + cur.getId());
+  }
+
+  public void delete(int id) {
+    people.remove(show(id));
   }
 
 }
