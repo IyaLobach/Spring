@@ -29,4 +29,10 @@ public class PersonDAO {
     return null;
   }
 
+  public void save(Person person) {
+    person.setId(++ID);
+    System.out.println(person.getName() + " " + person.getId());
+    people.add(person);
+  }
+
 }
