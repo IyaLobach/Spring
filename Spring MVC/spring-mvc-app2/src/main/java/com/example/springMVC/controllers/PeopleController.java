@@ -1,7 +1,7 @@
-package com.example.springMVC.config.controllers;
+package com.example.springMVC.controllers;
 
-import com.example.springMVC.config.dao.PersonDAO;
-import com.example.springMVC.config.models.Person;
+import com.example.springMVC.dao.PersonDAO;
+import com.example.springMVC.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

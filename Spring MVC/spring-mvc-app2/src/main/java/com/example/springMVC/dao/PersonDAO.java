@@ -1,6 +1,6 @@
-package com.example.springMVC.config.dao;
+package com.example.springMVC.dao;
 
-import com.example.springMVC.config.models.Person;
+import com.example.springMVC.models.Person;
 import java.util.ArrayList;
 import org.springframework.stereotype.Component;
 
@@ -11,10 +11,10 @@ public class PersonDAO {
   private int ID;
 
   {
-    people.add(new Person(++ID, "Iya"));
-    people.add(new Person(++ID, "Vika"));
-    people.add(new Person(++ID, "Gera"));
-    people.add(new Person(++ID, "Sonya"));
+    people.add(new Person(++ID, "Iya", "iya@mail.ru", 22));
+    people.add(new Person(++ID, "Vika", "vika@mail.ru", 22));
+    people.add(new Person(++ID, "Gera", "gera@mail.ru", 22));
+    people.add(new Person(++ID, "Sonya", "sonya@mail.ru", 22));
   }
 
   public ArrayList<Person> index() {
@@ -37,7 +37,8 @@ public class PersonDAO {
   public void update(int id, Person newPerson) {
     Person cur = show(id);
     cur.setName(newPerson.getName());
-    System.out.println(cur.getName() + " " + cur.getId());
+    cur.setEmail(newPerson.getEmail());
+    cur.setAge(newPerson.getAge());
   }
 
   public void delete(int id) {
