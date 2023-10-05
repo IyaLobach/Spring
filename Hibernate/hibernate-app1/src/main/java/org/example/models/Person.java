@@ -3,6 +3,8 @@ package org.example.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,6 +14,7 @@ public class Person {
 
   @Id
   @Column(name = "id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
 
   @Column(name = "person_name")
@@ -23,7 +26,7 @@ public class Person {
   public Person() {
   }
 
-  public Person(int id, String name, int age) {
+  public Person(String name, int age) {
     this.id = id;
     this.name = name;
     this.age = age;
@@ -31,10 +34,6 @@ public class Person {
 
   public int getId() {
     return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
   }
 
   public String getName() {
